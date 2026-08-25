@@ -1,0 +1,14 @@
+name: SConsoleFix
+version: 1.0.0
+main: me.sirius.sconsolefix.SConsoleFix
+api-version: '1.21'
+author: Sirius
+description: Plugin para bloquear mensajes de spam en la consola usando filtros de Log4j
+website: https://github.com/sirius
+
+# No requiere comandos ni permisos ya que funciona automáticamente
+
+# Sin SiriusCore.jar, Bukkit ni intenta cargar este plugin.
+depend:
+  - SiriusCore
+
