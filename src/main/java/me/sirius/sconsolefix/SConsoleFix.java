@@ -28,7 +28,11 @@ public class SConsoleFix extends SiriusPlugin {
     protected void onStop() {
         try {
             if (filter != null) {
+                // Parar el filtro no lo saca del logger raiz: sin quitarlo, cada
+                // /reload apilaba otro y el viejo retenia el classloader del plugin.
+                ((Logger) LogManager.getRootLogger()).get().removeFilter(filter);
                 filter.stop();
+                filter = null;
             }
             getLogger().info("SConsoleFix deshabilitado correctamente");
         } catch (Exception e) {
