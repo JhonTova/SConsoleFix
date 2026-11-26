@@ -14,10 +14,12 @@ Silencia el spam de mensajes inútiles y quédate con los logs que de verdad lee
 
 ## Características
 
-- **Filtra el spam de la consola** con reglas sobre Log4j.
-- Oculta los mensajes repetitivos y molestos que no aportan nada.
-- Ligerísimo — actúa a nivel de logging, sin coste apreciable.
-- Filtros configurables: tú decides qué se calla.
+- **Silencia el spam del servidor de sesiones de Mojang**: cuando falla o limita las
+  peticiones, el servidor imprime errores repetidos (`Status: 429`,
+  `Couldn't look up profile properties`, páginas de error en HTML, `Service unavailable`…).
+  SConsoleFix los corta.
+- Actúa como **filtro de Log4j**: esas líneas no llegan ni a la consola ni al archivo de log.
+- **Sin configuración** y sin coste apreciable. El resto de mensajes no se toca.
 
 ## Requisitos
 
@@ -25,7 +27,7 @@ Requiere **[SiriusCore](https://github.com/JhonTova/SiriusCore)**.
 
 ## Instalación
 
-`SiriusCore.jar` + `SConsoleFix.jar` en `plugins/`. Spigot / Paper / Purpur 1.21.11+.
+`SiriusCore.jar` + `SConsoleFix.jar` en `plugins/`. Paper / Purpur 1.21.11+.
 
 ## Descarga
 
@@ -44,3 +46,8 @@ mvn package        # en este repositorio; el .jar queda en target/
 
 Cada push y pull request se compila en GitHub Actions. Al subir una tag `v*`, el `.jar`
 se adjunta solo a la release.
+
+## Licencia
+
+[MIT](LICENSE): puedes usarlo, modificarlo y redistribuirlo manteniendo el aviso de copyright.
+Requiere SiriusCore, que tiene su propia licencia.
